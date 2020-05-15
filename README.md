@@ -1,5 +1,6 @@
 # smg_learning
-This repository contains all the important code for the work I have done this year on machine learning for sonomyographical data from the Verasonics system combined with motion tracking data from a Vicon system
+This repository contains all the important code for the work I have done this year on machine learning for sonomyographical data from the Verasonics system combined with motion tracking data from a Vicon system.
+Note: The first attempts at networks used smaller batches that contained only one class and switched between batches frequently because of the extreme memory requirements. This was changed for the final attempts at training but it did not change the results of the training.
 # Explanation of Files
 ## Testing files
 ### adjust_image.ipynb
