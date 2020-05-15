@@ -49,17 +49,5 @@ for trial in trials:
     cosVals = np.divide(dotProd, magProduct)
     angles = np.arccos(cosVals)
 
-    angles = np.zeros((len(frame_data),5))
-    for j in range(5):
-        vectorA = np.subtract(finger_data[:,j,1,:],finger_data[:,j,0,:])
-        vectorB = np.subtract(finger_data[:,j,3,:],finger_data[:,j,2,:])
-        dotProd = np.einsum('ij, ij->i', vectorA, vectorB)
-        vectorAnorm = LA.norm(vectorA, 2, axis=1)
-        vectorBnorm = LA.norm(vectorB, 2, axis=1)
-        magProduct = np.multiply(vectorAnorm, vectorBnorm)
-        cosVals = np.divide(dotProd, magProduct)
-        angles[:,j] = np.arccos(cosVals)
-    np.save('ang_train.npy', angles)
-
     print('saving data')
     np.save('vicon_proc/{0}-angles.npy'.format(trial), angles)
